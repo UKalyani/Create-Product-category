@@ -1,0 +1,24 @@
+##This API lets you retrieve a product category by ID.
+curl https://example.com/wc-api/v3/products/categories/9 \
+	-u consumer_key:consumer_secret
+WooCommerce.get('products/categories/9', function(err, data, res) {
+  console.log(res);
+});
+<?php print_r($woocommerce->get('products/categories/9')); ?>
+print(wcapi.get("products/categories/9").json())
+woocommerce.get("products/categories/9").parsed_response
+
+
+##JSON RESPONSE EXAMPLE
+{
+  "product_category": {
+    "id": 9,
+    "name": "Clothing",
+    "slug": "clothing",
+    "parent": 0,
+    "description": "",
+    "display": "default",
+    "image": "",
+    "count": 23
+  }
+}
