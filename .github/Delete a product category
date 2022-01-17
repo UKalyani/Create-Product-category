@@ -1,0 +1,13 @@
+curl -X DELETE https://example.com/wc-api/v3/products/categories/9 \
+	-u consumer_key:consumer_secret
+WooCommerce.delete('products/categories/9', function(err, data, res) {
+  console.log(res);
+});
+<?php print_r($woocommerce->delete('products/categories/9')); ?>
+print(wcapi.delete("products/categories/9").json())
+woocommerce.delete("products/categories/9").parsed_response
+JSON response example:
+
+{
+  "message": "Deleted product_category"
+}
