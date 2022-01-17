@@ -1,0 +1,54 @@
+curl -X PUT https://example.com/wc-api/v3/products/categories/9 \
+	-u consumer_key:consumer_secret \
+	-H "Content-Type: application/json" \
+	-d '{
+  "product_category": {
+    "description": "All kinds of clothes."
+  }
+}'
+var data = {
+  product_category: {
+    description: 'All kinds of clothes.'
+  }
+};
+
+WooCommerce.put('products/categories/9', data, function(err, data, res) {
+  console.log(res);
+});
+<?php
+$data = [
+    'product_category' => [
+        'description' => 'All kinds of clothes.'
+    ]
+];
+
+print_r($woocommerce->put('products/categories/9', $data));
+?>
+data = {
+    "product_category": {
+        "description": "All kinds of clothes."
+    }
+}
+
+print(wcapi.put("products/categories/9", data).json())
+data = {
+  product_category: {
+    description: "All kinds of clothes."
+  }
+}
+
+woocommerce.put("products/categories/9", data).parsed_response
+JSON response example:
+
+{
+  "product_category": {
+    "id": 9,
+    "name": "Clothing",
+    "slug": "clothing",
+    "parent": 0,
+    "description": "All kinds of clothes.",
+    "display": "default",
+    "image": "",
+    "count": 23
+  }
+}
